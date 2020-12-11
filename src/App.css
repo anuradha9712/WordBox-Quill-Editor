@@ -1,0 +1,111 @@
+.main-div {
+  /* background: linear-gradient(to right, #FFE0F9, #5956E9); */
+  min-height: 100vh;
+  padding: 30px;
+  /* text-align: center; */
+  /* background-color: #F4ECFB; */
+  background: linear-gradient(to right, #FFE0F9, #F4ECFB);
+  /* background-color: #FFDEC0; */
+}
+
+.App {
+  width: 100%;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  /* border-bottom-right-radius: 30px; */
+  border: 2px solid #5956E9;
+  padding: 15px;
+  width: 100%;
+  overflow: hidden;
+  min-height: 150px;
+  position: relative;
+  height: 100%;
+  margin-bottom: 20px;
+  /* height: auto; */
+}
+
+.card h3 {
+  position: absolute;
+  font-size: 25px;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+}
+
+.description {
+  margin-top: 30px !important;
+  justify-content: center;
+  text-align: center;
+}
+
+.description .itemGrid{
+  padding: 25px !important;
+}
+
+.ql-toolbar.ql-snow, .ql-container.ql-snow {
+  border: 2px solid #5956E9;
+}
+
+.ql-toolbar.ql-snow {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.ql-container.ql-snow {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  min-height: 200px;
+}
+
+.title {
+  /* color: #FFFFFF; */
+  color: #5956E9;
+  text-align: center;
+  font-size: 50px;
+}
+
+.tagline {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+
+img {
+  width: 50%;
+}
+
+.para p {
+  font-size: 30px;
+}
+
+@media (min-width: 1500px){
+  .para p {
+    padding: 30% 0px;
+  }
+  
+}
+
+.clearBtn{
+  float: left;
+}
+
+.footer{
+  margin-top: 80px;
+}
+
+.footerGrid{
+  justify-content: center;
+}
+
+.footerGrid h4{
+  font-size: 25px;
+  text-align: center;
+}
+
+.footerGrid a {
+  padding: 10px 10px;
+  font-size: 30px;
+}
