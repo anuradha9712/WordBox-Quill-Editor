@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import TextEditor from './components/TextEditor';
-import { Grid, Divider } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import ReactHtmlParser from 'react-html-parser';
 import readingtime from 'reading-time';
 import Sentiment from 'sentiment';
@@ -18,7 +17,7 @@ const sentiment = new Sentiment();
 function App() {
 
   const [content, setContent] = useState('');
-  const [sentimentScore, setSentimentScore] = useState(0);
+  const [sentimentScore, setSentimentScore] = useState({score: 0});
 
 
   const removeTags = (str) => {
@@ -43,7 +42,7 @@ function App() {
     <div className="main-div">
       <h1 className="title">WordBox</h1>
       <h3 className="tagline"><i>"Words are free. It's how you use them that may cost you." -KushandWizdom</i></h3>
-      <Grid container xs={12} md={12} spacing={2}>
+      <Grid item container xs={12} md={12} spacing={2}>
         <Grid item container xs={12} md={6}>
           <TextEditor handleContentChange={handleContentChange} />
         </Grid>
@@ -59,16 +58,16 @@ function App() {
         </Grid>
       </Grid>
 
-      <Grid container xs={12} md={12} spacing={2} className="description"  >
+      <Grid item container xs={12} md={12} spacing={2} className="description"  >
         <Grid item container xs={12} md={3} className="itemGrid" >
           <div className="card para ">
-            <p>{readingtime(content).minutes + ' ' + 'minutes'}</p>
+            <p>{readingtime(content).minutes} minutes</p>
             <h3>Reading Time</h3>
           </div>
         </Grid>
         <Grid item container xs={12} md={3} className="itemGrid">
           <div className="card para">
-            <p>{readingtime(content).words + ' ' + 'words'}</p>
+            <p>{readingtime(content).words } words</p>
             <h3>Words</h3>
           </div>
         </Grid>
@@ -101,7 +100,7 @@ function App() {
 
       </Grid>
 
-      <Grid container xs={12} className="footer" >
+      <Grid container className="footer" >
         {/* <div id="footer"> */}
         <Grid item container xs={12} className="footerGrid">
          <h4> Made with <span role="img" aria-label="heart"> 💜</span> by Anuradha Aggarwal </h4>
