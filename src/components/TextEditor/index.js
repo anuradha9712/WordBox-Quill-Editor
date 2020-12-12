@@ -9,7 +9,6 @@ const TextEditor = ({ handleContentChange }) => {
 
     const [content, setContent] = useState('');
 
-    
     const handleChange = (value) => {
         console.log("vallluueee--> ", value);
         setContent(value)

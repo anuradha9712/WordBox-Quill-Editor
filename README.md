@@ -1,7 +1,12 @@
-# Blog App
+# WordBox
 
-This application provides interface to create a new articles/blogs using embedded `Quill Rich Text Editor`  
+This application provides interface to create a new articles/blogs using embedded `Quill Rich Text Editor`.
 
+## Additional Features
+- Estimated Reading Time
+- Total Number of Words in Article
+- Sentiment Score
+- Sentiment Analysis
+- Copy HTML Code
 
-### Steps
-- npm i react-quill --save
+[Live Demo](https://stoic-davinci-43812b.netlify.app/)
