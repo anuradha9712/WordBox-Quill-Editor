@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // ES6
 import '../../App.css';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
 
 const TextEditor = ({ handleContentChange }) => {
@@ -16,9 +16,9 @@ const TextEditor = ({ handleContentChange }) => {
         handleContentChange(value);
     }
 
-    // const ClearText = () =>{
-    //     setContent('');
-    // }
+    const ClearText = () =>{
+        setContent('');
+    }
 
     const modules = {
         toolbar: {
@@ -55,10 +55,10 @@ const TextEditor = ({ handleContentChange }) => {
     ]
 
     return (
-        <div className="App">
-            {/* <Button className="clearBtn" variant="outlined" color="primary" onClick={()=> ClearText()}>
-                Clear
-            </Button> <br/> <br/> */}
+        <div className="App" >
+            <Button className="clearBtn" variant="outlined" color="primary" onClick={()=> ClearText()}>
+                Clear Text
+            </Button> 
             <ReactQuill
                 value={content}
                 theme="snow"

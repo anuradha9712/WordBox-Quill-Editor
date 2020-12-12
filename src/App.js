@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TextEditor from './components/TextEditor';
-import { Grid } from '@material-ui/core';
+import { Grid, Snackbar, Button } from '@material-ui/core';
 import ReactHtmlParser from 'react-html-parser';
 import readingtime from 'reading-time';
 import Sentiment from 'sentiment';
@@ -10,15 +10,15 @@ import negativeGIF from './images/negative.gif';
 import neutralGIF from './images/neutral.gif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import copy from 'copy-to-clipboard';
 
 const sentiment = new Sentiment();
 
 function App() {
 
   const [content, setContent] = useState('');
-  const [sentimentScore, setSentimentScore] = useState({score: 0});
-
+  const [sentimentScore, setSentimentScore] = useState({ score: 0 });
+  const [openAlert, setOpenAlert] = useState(false);
 
   const removeTags = (str) => {
     if ((str === null) || (str === ''))
@@ -37,17 +37,36 @@ function App() {
 
   }
 
+  const CopyHTML = () => {
+    copy(content);
+    setOpenAlert(true);
+  }
 
   return (
     <div className="main-div">
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={1000}
+        // anchorOrigin={{ top, center }}
+        message="Copied to Clipboard!"
+        onClose={() => setOpenAlert(false)}
+      >
+        
+      </Snackbar>
       <h1 className="title">WordBox</h1>
       <h3 className="tagline"><i>"Words are free. It's how you use them that may cost you." -KushandWizdom</i></h3>
+
+
       <Grid item container xs={12} md={12} spacing={2}>
         <Grid item container xs={12} md={6}>
+
           <TextEditor handleContentChange={handleContentChange} />
         </Grid>
         <Grid item container xs={12} md={6}  >
-          <div className="card ql-editor">
+          <Button className="clearBtn" variant="outlined" color="primary" onClick={() => CopyHTML()} >
+            Copy HTML Code
+            </Button>
+          <div className="card ql-editor display-box">
             {/* preview */}
             {ReactHtmlParser(content)}
 
@@ -67,7 +86,7 @@ function App() {
         </Grid>
         <Grid item container xs={12} md={3} className="itemGrid">
           <div className="card para">
-            <p>{readingtime(content).words } words</p>
+            <p>{readingtime(content).words} words</p>
             <h3>Words</h3>
           </div>
         </Grid>
@@ -103,8 +122,8 @@ function App() {
       <Grid container className="footer" >
         {/* <div id="footer"> */}
         <Grid item container xs={12} className="footerGrid">
-         <h4> Made with <span role="img" aria-label="heart"> 💜</span> by Anuradha Aggarwal </h4>
-                <Grid item container xs={12} className="footerGrid" >
+          <h4> Made with <span role="img" aria-label="heart"> 💜</span> by Anuradha Aggarwal </h4>
+          <Grid item container xs={12} className="footerGrid" >
             <a href="https://github.com/anuradha9712"  ><FontAwesomeIcon icon={faGithub} /></a>
             <a href="https://www.linkedin.com/in/anuradha-aggarwal-4a2751107/"><FontAwesomeIcon icon={faLinkedin} /></a>
             <a href="https://twitter.com/Anuradh06359394/"><FontAwesomeIcon icon={faTwitter} /></a>
