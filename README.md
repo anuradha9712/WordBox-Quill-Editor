@@ -9,4 +9,4 @@ This application provides interface to create a new articles/blogs using embedde
 - Sentiment Analysis
 - Copy HTML Code
 
-[Live Demo](https://stoic-davinci-43812b.netlify.app/)
+[Live Demo](https://word-box.netlify.app/)
