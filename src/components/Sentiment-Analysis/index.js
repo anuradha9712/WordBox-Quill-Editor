@@ -40,7 +40,7 @@ function SentimentAnalysis({ content }) {
                             {/* <p>Neutral</p> */}
                         </div>
                         :
-                        sentimentScore.score > 1 ?
+                        sentimentScore.score > 0 ?
                             <div>
                                 <img src={positiveGIF} alt='positive' />
                                 {/* <p>Positive</p> */}
