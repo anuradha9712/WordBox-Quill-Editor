@@ -120,4 +120,10 @@ img {
 .footerGrid a {
   padding: 10px 10px;
   font-size: 30px;
+  color: #5956E9;
+}
+
+.footerGrid span {
+  color: transparent;
+  text-shadow: 0 0 0 #5956E9;
 }
